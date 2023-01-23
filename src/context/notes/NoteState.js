@@ -14,7 +14,7 @@ const NoteState = (props) => {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNTU0NTJlZjE2ZGZlMzdiMjg3ZGIzIn0sImlhdCI6MTY3Mzg3ODkyM30.E-7jA7TC1mTHxs_WT_C0moGxKvauxanshX-IVNDCQyE'
+                'auth-token': localStorage.getItem("token")
             }
         });
         const json = await response.json();
@@ -29,7 +29,7 @@ const NoteState = (props) => {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNTU0NTJlZjE2ZGZlMzdiMjg3ZGIzIn0sImlhdCI6MTY3Mzg3ODkyM30.E-7jA7TC1mTHxs_WT_C0moGxKvauxanshX-IVNDCQyE'
+                'auth-token': localStorage.getItem("token")
             },
             body: JSON.stringify({title, description, tag}) // body data type must match "Content-Type" header
         });
@@ -43,7 +43,7 @@ const NoteState = (props) => {
             method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNTU0NTJlZjE2ZGZlMzdiMjg3ZGIzIn0sImlhdCI6MTY3Mzg3ODkyM30.E-7jA7TC1mTHxs_WT_C0moGxKvauxanshX-IVNDCQyE'
+                'auth-token': localStorage.getItem("token")
             }
         });
         const json = await response.json();
@@ -57,7 +57,7 @@ const NoteState = (props) => {
             method: 'PUT', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
-                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjNTU0NTJlZjE2ZGZlMzdiMjg3ZGIzIn0sImlhdCI6MTY3Mzg3ODkyM30.E-7jA7TC1mTHxs_WT_C0moGxKvauxanshX-IVNDCQyE'
+                'auth-token': localStorage.getItem("token")
             },
             body: JSON.stringify({title, description, tag}) // body data type must match "Content-Type" header
         });
