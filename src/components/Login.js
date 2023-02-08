@@ -6,7 +6,7 @@ export default function Login(props) {
     let history = useNavigate()
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/auth/login`, {
+        const response = await fetch(`${process.env.REACT_APP_URL}/auth/login`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json'
@@ -15,7 +15,7 @@ export default function Login(props) {
         });
         const json = await response.json()
         console.log(json)
-        const userdata = await fetch(`http://localhost:5000/api/auth/getuser`, {
+        const userdata = await fetch(`${process.env.REACT_APP_URL}/auth/getuser`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',

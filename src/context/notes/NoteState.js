@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    const host = `${process.env.REACT_APP_URL}`
     const noteInitially = []
 
     const [notes, setNotes] = useState(noteInitially);
@@ -10,7 +10,7 @@ const NoteState = (props) => {
     // Get All notes
     const getNotes = async () => {
         console.log("Adding a new note")
-        const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+        const response = await fetch(`${host}/notes/fetchallnotes`, {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const NoteState = (props) => {
     // Add note
     const addNote = async (title, description, tag) => {
         console.log("Adding a new note")
-        const response = await fetch(`${host}/api/notes/addnote`, {
+        const response = await fetch(`${host}/notes/addnote`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const NoteState = (props) => {
     // Delete note
     const deleteNote = async (id) => {
         console.log("Deleting the note with id", id)
-        const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+        const response = await fetch(`${host}/notes/deletenote/${id}`, {
             method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const NoteState = (props) => {
     // Edit note
     const editNote = async (id, title, description, tag) => {
         // API Call
-        const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+        const response = await fetch(`${host}/notes/updatenote/${id}`, {
             method: 'PUT', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json',

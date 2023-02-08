@@ -6,7 +6,7 @@ export default function Signup() {
     let history = useNavigate()
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/auth/createuser`, {
+        const response = await fetch(`${process.env.REACT_APP_URL}/auth/createuser`, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
                 'Content-Type': 'application/json'
