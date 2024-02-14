@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
-    const host = `${process.env.REACT_APP_URL}`
+    const host = `https://inotebookapi.onrender.com/api`
     const noteInitially = []
 
     const [notes, setNotes] = useState(noteInitially);
